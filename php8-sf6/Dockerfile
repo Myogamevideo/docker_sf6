@@ -1,6 +1,7 @@
 FROM php:8.1.0-cli
 
-ARG PROJECT_NAME=starter_sf6
+ARG PROJECT_NAME
+ENV PROJECT_NAME=${PROJECT_NAME}
 
 RUN apt-get update \
     &&  apt-get install -y --no-install-recommends \
