@@ -1,8 +1,5 @@
 FROM php:8.1.0-cli
 
-ARG PROJECT_NAME
-ENV PROJECT_NAME=${PROJECT_NAME}
-
 RUN apt-get update \
     &&  apt-get install -y --no-install-recommends \
         npm locales apt-utils git libicu-dev g++ libpng-dev libxml2-dev libzip-dev libonig-dev libxslt-dev unzip libpq-dev wget \
@@ -41,6 +38,8 @@ RUN git config --global user.email "you@example.com" \
 
 CMD tail -f /dev/null
 
-WORKDIR /var/www/html/${PROJECT_NAME}
+ARG project_name
+
+WORKDIR /var/www/html/${project_name}
 
 
