@@ -47,9 +47,8 @@ services:
             - ./docker/db/data:/var/lib/postgresql/data:rw
     ###< doctrine/doctrine-bundle ###
 
-    maildev:
-        hostname: maildev
-        image: maildev/maildev
+    mailer:
+        image: schickling/mailcatcher
         restart: always
         ports:
             - "1080:1080"
