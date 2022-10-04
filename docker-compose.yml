@@ -31,7 +31,7 @@ services:
             - '3306:3306'
         volumes:
             # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
-            - ./docker/db/data:/var/lib/postgresql/data:rw
+            - ./docker/db/data:/var/lib/mysql/data:rw
 
     phpmyadmin:
         image: phpmyadmin
@@ -44,17 +44,11 @@ services:
             - "8080:80"
         volumes:
             # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
-            - ./docker/db/data:/var/lib/postgresql/data:rw
+            - ./docker/db/data:/var/lib/mysql/data:rw
     ###< doctrine/doctrine-bundle ###
 
     mailer:
         image: schickling/mailcatcher
-        restart: always
         ports:
             - "1080:1080"
             - "1025:1025"
-
-volumes:
-    ###> doctrine/doctrine-bundle ###
-    db-data:
-    ###< doctrine/doctrine-bundle ###
