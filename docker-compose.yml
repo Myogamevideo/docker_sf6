@@ -41,11 +41,14 @@ services:
             - "8080:80"
     ###< doctrine/doctrine-bundle ###
 
-    ###> symfony/mailer ###
-    mailer:
-        image: schickling/mailcatcher
-        ports: [ 1025, 1080 ]
-    ###< symfony/mailer ###
+    maildev:
+        hostname: maildev
+        image: maildev/maildev
+        command: bin/maildev --web 80 --smtp 25 --hide-extensions STARTTLS
+        restart: always
+        ports:
+            - "1080:80"
+            - "25:25"
 
 volumes:
     ###> doctrine/doctrine-bundle ###

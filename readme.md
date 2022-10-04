@@ -38,10 +38,6 @@ ipconfig
 
 # Mailer
 ```
-docker exec -it php8-sf6 bash
-
-cd nom_du_projet
-
 symfony open:local:webmail
 ```
 
