@@ -1,5 +1,7 @@
 FROM php:8.1.0-cli
 
+ARG PROJECT_NAME=starter_sf6
+
 RUN apt-get update \
     &&  apt-get install -y --no-install-recommends \
         npm locales apt-utils git libicu-dev g++ libpng-dev libxml2-dev libzip-dev libonig-dev libxslt-dev unzip libpq-dev wget \
@@ -38,6 +40,6 @@ RUN git config --global user.email "you@example.com" \
 
 CMD tail -f /dev/null
 
-WORKDIR /var/www/html/starter_sf6
+WORKDIR /var/www/html/${PROJECT_NAME}
 
 
