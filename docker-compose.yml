@@ -52,3 +52,8 @@ services:
         ports:
             - "1080:1080"
             - "1025:1025"
+
+volumes:
+    ###> doctrine/doctrine-bundle ###
+    db-data:
+    ###< doctrine/doctrine-bundle ###
