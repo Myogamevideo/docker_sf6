@@ -50,8 +50,8 @@ services:
         command: bin/maildev --web 80 --smtp 25 --hide-extensions STARTTLS
         restart: always
         ports:
-            - "1080:80"
-            - "25:25"
+            - "1080:1080"
+            - "1025:1025"
 
 volumes:
     ###> doctrine/doctrine-bundle ###
