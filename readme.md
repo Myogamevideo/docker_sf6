@@ -4,21 +4,19 @@ cd project
 
 git clone https://github.com/Myogamevideo/starter_sf6.git nom_du_projet
 
-docker-compose up -d --build --build-arg PROJECT_NAME=nom_du_projet .
+docker build --build-arg PROJECT_NAME=nom_du_projet
+
+docker-compose up -d
 ```
 
 ## Access bash
 ```
 docker exec -it php8-sf6 bash
-
-cd nom_du_projet
 ```
 
 ## Start yarn :
 ```
 docker exec -it php8-sf6 bash
-
-cd nom_du_projet
 
 yarn watch
 ```
